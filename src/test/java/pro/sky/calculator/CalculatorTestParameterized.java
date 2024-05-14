@@ -14,69 +14,57 @@ public class CalculatorTestParameterized {
 
     @ParameterizedTest
     @MethodSource("provideParamsForTestPlus")
-    public void shouldReturnCorrectValueForPlus() {
-        Integer result = out.calculatePlus(2, 4);
-        Integer result2 = out.calculatePlus(3, 2);
-
-        Assertions.assertEquals(6, result);
-        Assertions.assertEquals(5, result2);
+    public void shouldReturnCorrectValueForPlus(Integer a, Integer b, Integer result) {
+        Integer exResult = out.calculatePlus(a, b);
+        Assertions.assertEquals(result, exResult);
     }
 
     @ParameterizedTest
     @MethodSource("provideParamsForTestMinus")
-    public void shouldReturnCorrectValueForMinus() {
-        Integer result = out.calculateMinus(5, 4);
-        Integer result2 = out.calculateMinus(4, 2);
-
-        Assertions.assertEquals(1, result);
-        Assertions.assertEquals(2, result2);
+    public void shouldReturnCorrectValueForMinus(Integer a, Integer b, Integer result) {
+        Integer exResult = out.calculateMinus(a, b);
+        Assertions.assertEquals(result, exResult);
     }
 
     @ParameterizedTest
     @MethodSource("provideParamsForTestMultiply")
-    public void shouldReturnCorrectValueForMultiply() {
-        Integer result = out.calculateMultiply(2, 4);
-        Integer result2 = out.calculateMultiply(3, 2);
-
-        Assertions.assertEquals(8, result);
-        Assertions.assertEquals(6, result2);
+    public void shouldReturnCorrectValueForMultiply(Integer a, Integer b, Integer result) {
+        Integer exResult = out.calculateMultiply(a, b);
+        Assertions.assertEquals(result, exResult);
     }
 
     @ParameterizedTest
     @MethodSource("provideParamsForTestDivide")
-    public void shouldReturnCorrectValueForDivide() {
-        Integer result = out.calculateDivide(8, 2);
-        Integer result2 = out.calculateDivide(4, 2);
-
-        Assertions.assertEquals(4, result);
-        Assertions.assertEquals(2, result2);
+    public void shouldReturnCorrectValueForDivide(Integer a, Integer b, Integer result) {
+        Integer exResult = out.calculateDivide(a, b);
+        Assertions.assertEquals(result, exResult);
     }
 
     public static Stream<Arguments> provideParamsForTestPlus() {
         return Stream.of(
-                Arguments.of(0,2,2),
-                Arguments.of(2,4,6)
+                Arguments.of(0, 2, 2),
+                Arguments.of(2, 4, 6)
         );
     }
 
     public static Stream<Arguments> provideParamsForTestMinus() {
         return Stream.of(
-                Arguments.of(0,2,-2),
-                Arguments.of(6,4,2)
+                Arguments.of(0, 2, -2),
+                Arguments.of(6, 4, 2)
         );
     }
 
     public static Stream<Arguments> provideParamsForTestMultiply() {
         return Stream.of(
-                Arguments.of(0,2,0),
-                Arguments.of(2,4,8)
+                Arguments.of(0, 2, 0),
+                Arguments.of(2, 4, 8)
         );
     }
 
     public static Stream<Arguments> provideParamsForTestDivide() {
         return Stream.of(
-                Arguments.of(2,2,1),
-                Arguments.of(8,4,2)
+                Arguments.of(2, 2, 1),
+                Arguments.of(8, 4, 2)
         );
     }
 

@@ -22,17 +22,17 @@ public class CalculatorController {
 
     @GetMapping("/plus")
     public String calculatePlus(@RequestParam("num1") Integer a, @RequestParam("num2") Integer b) {
-        return a + " / " + b + " = " + calculatorService.calculatePlus(a, b);
+        return a + " + " + b + " = " + calculatorService.calculatePlus(a, b);
     }
 
     @GetMapping("/minus")
     public String calculateMinus(@RequestParam("num1") Integer a, @RequestParam("num2") Integer b) {
-        return a + " / " + b + " = " + calculatorService.calculateMinus(a, b);
+        return a + " - " + b + " = " + calculatorService.calculateMinus(a, b);
     }
 
     @GetMapping("/multiply")
     public String calculateMultiply(@RequestParam("num1") Integer a, @RequestParam("num2") Integer b) {
-        return a + " / " + b + " = " + calculatorService.calculateMultiply(a, b);
+        return a + " * " + b + " = " + calculatorService.calculateMultiply(a, b);
     }
 
     @GetMapping("/divide")

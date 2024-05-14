@@ -40,7 +40,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public Integer calculateDivide(Integer a, Integer b) {
         if (b == 0) {
-            throw new IllegalArgumentException("Ошибка!");
+            throw new IllegalArgumentException("У меня плохо получается делить на ноль) Попробуй другое число");
         } else if (validateValue(a, b)) {
             return a / b;
         } else {
